@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>番茄鐘</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>番茄鐘</h1>
+
+    <!-- 頁籤區域 -->
+    <div class="tabs">
+        <button>專注時間</button>
+        <button>長休息</button>
+        <button>短休息</button>
+    </div>
+
+    <!-- 倒數計時器 -->
+    <div class="countdown">
+        <span id="timer">25:00</span>
+    </div>
+
+    <!-- 開始按鈕 -->
+    <button class="start-button">開始</button>
+
+    <script>
+        // JavaScript 代碼可以放在這裡以控制倒數計時功能
+        let timerDisplay = document.getElementById('timer');
+        let startButton = document.querySelector('.start-button');
+        let isRunning = false;
+        let countdownTimer;
+
+        startButton.addEventListener('click', function() {
+            if (isRunning) {
+                clearInterval(countdownTimer);
+                isRunning = false;
+                startButton.textContent = '開始';
+            } else {
+                isRunning = true;
+                startButton.textContent = '停止';
+                let minutes = 25;
+                let seconds = 0;
+
+                countdownTimer = setInterval(function() {
+                    if (seconds == 0) {
+                        if (minutes == 0) {
+                            clearInterval(countdownTimer);
+                            isRunning = false;
+                            startButton.textContent = '開始';
+                            alert("時間到!");
+                        } else {
+                            minutes--;
+                            seconds = 59;
+                        }
+                    } else {
+                        seconds--;
+                    }
+
+                    timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>

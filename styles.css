@@ -1,0 +1,77 @@
+/* 頁面整體樣式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
+/* 標題樣式 */
+h1 {
+    margin-top: 20px;
+    color: #333;
+}
+
+/* 頁籤樣式 */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.tabs button {
+    padding: 30px 20px;
+    margin: 0 10px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.tabs button:hover {
+    background-color: #e55347;
+}
+
+/* 倒數計時器區域 */
+.countdown {
+    margin-top: 50px;
+    font-size: 100px;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    width: 30%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .countdown {
+        width: 80%;
+        font-size: 80px;
+    }
+
+    .tabs button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+/* 開始按鈕 */
+.start-button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background-color: #45a049;
+}
